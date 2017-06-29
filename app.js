@@ -23,14 +23,10 @@ app.post('/upload', function(req, res) {
 		else {
 			createObjfromxlsx();
 			setTimeout(function(){
-				res.redirect('/json');
+        res.json({data:json});
 			},1000);
 		}
 	});
-});
-
-app.get("/json",function(req,res){
-	res.json({data:json});
 });
 
 app.listen(port,function(){
